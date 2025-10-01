@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Navgurukul Kitchen Signup</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <h2>Kitchen Signup</h2>
+    <form id="signupForm">
+      <input type="text" id="name" placeholder="Name" required />
+      <input type="tel" id="phone" placeholder="Phone Number" required />
+      <input type="email" id="email" placeholder="Email" required />
+      <label>Preference:</label>
+      <select id="preference" required>
+        <option value="Egg">Egg</option>
+        <option value="Paneer">Paneer</option>
+      </select>
+      <button type="submit">Sign Up</button>
+    </form>
+    <a href="dashboard.html">Go to Dashboard</a>
+    <div id="message"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
