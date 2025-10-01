@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kitchen Dashboard</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <h2>Kitchen Duty Dashboard</h2>
+    <table id="kitchenTable">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Name</th>
+          <th>Phone</th>
+          <th>Email</th>
+          <th>Preference</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+    <a href="index.html">Back to Sign Up</a>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      const res = await fetch('/dashboard');
+      const data = await res.json();
+      const tbody = document.querySelector("#kitchenTable tbody");
+      tbody.innerHTML = "";
+      data.forEach(entry => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${entry.date}</td>
+          <td>${entry.name}</td>
+          <td>${entry.phone}</td>
+          <td>${entry.email}</td>
+          <td>${entry.preference}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    });
+  </script>
+</body>
+</html>
